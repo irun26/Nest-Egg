@@ -8,6 +8,19 @@
 
 import UIKit
 
+extension UIViewController{
+    func HideKeyboard() {
+        let Tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(DismissKeyboard))
+        view.addGestureRecognizer(Tap)
+    }
+    
+    @objc func DismissKeyboard() {
+        view.endEditing(true)
+    }
+}
+
+
+
 class ViewController: UIViewController {
     
     var startingBalance: Double = 0
@@ -60,6 +73,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.HideKeyboard()
     }
     
     
@@ -82,6 +96,15 @@ class ViewController: UIViewController {
         
         return bal
     }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        
+        self.view.endEditing(true)
+        
+        return true
+        
+    }
+    
     
     
 }
