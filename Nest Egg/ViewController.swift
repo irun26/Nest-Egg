@@ -10,43 +10,35 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var startingBalanceAmount: Int = 0
-    var monthlyContributionAmount: Int = 0
+    var startingBalanceAmount: Double = 0
+    var monthlyContributionAmount: Double = 0
+    var yearOfRetirement: Double = 0
+    var interestRate: Double = 0
+    
 
-    @IBOutlet weak var startingBalance: UITextField!
-    @IBOutlet weak var monthlyContribution: UITextField!
-    @IBOutlet weak var yearOfRetirement: UITextField!
-    @IBOutlet weak var interestRate: UITextField!
-    @IBOutlet weak var nestEggAtRetirement: UITextField!
+    @IBOutlet weak var startingBalanceTF: UITextField!
+    @IBOutlet weak var monthlyContributionTF: UITextField!
+    @IBOutlet weak var yearOfRetirementTF: UITextField!
+    @IBOutlet weak var interestRateTF: UITextField!
+    @IBOutlet weak var nestEggAtRetirementTF: UITextField!
     
     @IBAction func calculateButton(_ sender: UIButton) {
-        startingBalanceAmount = Int(self.startingBalance.text!)!
-        monthlyContributionAmount = Int(self.monthlyContribution.text!)!
-        let yearOfRetirement = Int(self.yearOfRetirement.text!)
-        let interestRate = Int(self.interestRate.text!)
+        startingBalanceAmount = Double(self.startingBalanceTF.text!)!
+        monthlyContributionAmount = Double(self.monthlyContributionTF.text!)!
+        yearOfRetirement = Double(self.yearOfRetirementTF.text!)!
+        interestRate = Double(self.interestRateTF.text!)!
+        
         print("starting balance is \(startingBalanceAmount)")
         print("monthly contribution is \(monthlyContributionAmount)")
-        print("year of retirement is \(yearOfRetirement!)")
-        print("interest rate is \(interestRate!)")
+        print("year of retirement is \(yearOfRetirement)")
+        print("interest rate is \(interestRate)")
         
-        let n = 12
-        let currentYear = 2018
-        let yearsDifference = yearOfRetirement! - currentYear
-        print("year is \(currentYear)")
-        var nestEgg = 0
         
-        let nthPower = (n * yearsDifference)
         
-        let intInterestRate = Int(self.interestRate.text!)
-        let floatInterestRate = Float(intInterestRate!)
         
-        let onePlusRdivByN = (1 + floatInterestRate/Float(n))
+        nestEggAtRetirementTF.text = String(balance(P: startingBalanceAmount, r: interestRate, c: monthlyContributionAmount, Y: yearOfRetirement))
         
-        nestEgg = startingBalanceAmount * (Int(onePlusRdivByN)<<(nthPower))
-        
-//        nestEgg = startingBalanceAmount + ((monthlyContributionAmount * 12) * (yearOfRetirement! - currentYear))
-        nestEggAtRetirement.text? = String(nestEgg)
-        print("nest egg = \(nestEggAtRetirement.text!)")
+        print("float nest egg = \(nestEggAtRetirementTF.text)")
         
         
         
@@ -56,8 +48,17 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
     }
+    
+    
+    
+    
+    func balance(P:Double, r:Double, c:Double, Y:Double) -> Double {
+        var bal:Double
+        bal = pow(P*(1+r),Y) + c * (pow(1+r, Y+1) - (1 + r))/r
+        return bal
+    }
+    
+    
 }
 
