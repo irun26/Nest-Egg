@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB5CF50921DB4F9A00A77FA9 /* AboutTheApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5CF50821DB4F9A00A77FA9 /* AboutTheApp.swift */; };
 		CB63F2F321D693DD005BA05E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB63F2F221D693DD005BA05E /* AppDelegate.swift */; };
 		CB63F2F521D693DD005BA05E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB63F2F421D693DD005BA05E /* ViewController.swift */; };
 		CB63F2F821D693DD005BA05E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB63F2F621D693DD005BA05E /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CB5CF50821DB4F9A00A77FA9 /* AboutTheApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutTheApp.swift; sourceTree = "<group>"; };
 		CB63F2EF21D693DD005BA05E /* Nest Egg.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Nest Egg.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB63F2F221D693DD005BA05E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB63F2F421D693DD005BA05E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 				CB63F2F221D693DD005BA05E /* AppDelegate.swift */,
 				CB63F2F421D693DD005BA05E /* ViewController.swift */,
 				CB63F2F621D693DD005BA05E /* Main.storyboard */,
+				CB5CF50821DB4F9A00A77FA9 /* AboutTheApp.swift */,
 				CB63F2F921D693E0005BA05E /* Assets.xcassets */,
 				CB63F2FB21D693E0005BA05E /* LaunchScreen.storyboard */,
 				CB63F2FE21D693E0005BA05E /* Info.plist */,
@@ -135,6 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB5CF50921DB4F9A00A77FA9 /* AboutTheApp.swift in Sources */,
 				CB63F2F521D693DD005BA05E /* ViewController.swift in Sources */,
 				CB63F2F321D693DD005BA05E /* AppDelegate.swift in Sources */,
 			);
