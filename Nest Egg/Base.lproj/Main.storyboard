@@ -60,7 +60,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Calculate"/>
                                 <connections>
-                                    <action selector="calculateButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rg9-lj-NWI"/>
+                                    <action selector="calculateButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6yh-CP-jSW"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="$0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ibp-ay-P3t">
@@ -117,11 +117,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="interestRate" destination="Kk4-2F-gzB" id="2re-hl-TTm"/>
-                        <outlet property="monthlyContribution" destination="ibp-ay-P3t" id="EJ6-t3-3Yh"/>
-                        <outlet property="nestEggAtRetirement" destination="ozE-tR-7fI" id="hMR-Vv-fAR"/>
-                        <outlet property="startingBalance" destination="Gla-Jy-Vw1" id="tDP-fT-Rz8"/>
-                        <outlet property="yearOfRetirement" destination="FPK-yd-5ZJ" id="2nI-WZ-R2p"/>
+                        <outlet property="interestRateTF" destination="Kk4-2F-gzB" id="lXL-nz-7he"/>
+                        <outlet property="monthlyContributionTF" destination="ibp-ay-P3t" id="Nw6-pn-Nrs"/>
+                        <outlet property="nestEggAtRetirementTF" destination="ozE-tR-7fI" id="l33-NI-Nug"/>
+                        <outlet property="startingBalanceTF" destination="Gla-Jy-Vw1" id="xvN-EA-lRd"/>
+                        <outlet property="yearOfRetirementTF" destination="FPK-yd-5ZJ" id="6nT-F9-cYj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

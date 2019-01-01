@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     var startingBalance: Double = 0
     var monthlyContribution: Double = 0
     var yearOfRetirement: Double = 0
-//    var interestRate: Double = 0
+    var interestRate: Double = 0
     
 
     @IBOutlet weak var startingBalanceTF: UITextField!
@@ -27,18 +27,28 @@ class ViewController: UIViewController {
         monthlyContribution = Double(self.monthlyContributionTF.text!)!
         yearOfRetirement = Double(self.yearOfRetirementTF.text!)!
 //        interestRate = 5.0
-//        interestRate = Float(self.interestRateTF.text!)!
+        interestRate = Double(self.interestRateTF.text!)!
         
-//        print("starting balance is \(startingBalanceAmount)")
-//        print("monthly contribution is \(monthlyContributionAmount)")
-//        print("year of retirement is \(yearOfRetirement)")
-//        print("interest rate is \(interestRate)")
-//
+        print("starting balance is \(startingBalance)")
+        print("monthly contribution is \(monthlyContribution)")
+        print("year of retirement is \(yearOfRetirement)")
+        print("interest rate is \(interestRate)")
+
 //        let doubleInterestRate = Double(interestRate)
+        let currentYear: Double = 2018
+        let yearsBeforeRetirement: Double =  yearOfRetirement - currentYear
         
-        let nestEgg = balance(P: startingBalance, r: 5.0, c: monthlyContribution, Y: yearOfRetirement)
+        let nestEgg = balance(P: startingBalance, r: interestRate, c: monthlyContribution, Y: yearsBeforeRetirement)
+//
+        print("nest egg is \(nestEgg)")
         
-        nestEggAtRetirementTF.text = String(nestEgg)
+//        let doubleStr = String(format: "%.2f", myDouble) // "3.14"
+
+        let stringNestEgg = String(format: "$  %.2f", nestEgg)
+        
+//        nestEggAtRetirementTF.text = String(nestEgg)
+        
+        nestEggAtRetirementTF.text = String(stringNestEgg)
         
 //        print("float nest egg = \(nestEggAtRetirementTF.text)")
         
@@ -57,7 +67,19 @@ class ViewController: UIViewController {
     
     func balance(P:Double, r:Double, c:Double, Y:Double) -> Double {
         var bal:Double
-        bal = pow(P*(1+r),Y) + c * (pow(1+r, Y+1) - (1 + r))/r
+    
+//        P = 5000. PMT = 100. r = 5/100 = 0.05 (decimal). n = 12. t = 10.
+//        Total = [ P(1+r/n)^(nt) ] + [ PMT × (((1 + r/n)^(nt) - 1) / (r/n)) ]
+   
+        let n: Double = 12
+        let rate: Double = r/100
+        
+        bal = (P * pow(1 + rate / n, n*Y)) + (c * (((pow(1 + rate/n, n*Y)) - 1) / (rate/n)))
+        
+        
+//        bal = pow(P*(1+r/100/12),Y) + c * (pow(1+r/100/12, Y+1) - (1 + r/100/12))/(r/100/12)
+     
+        
         return bal
     }
     
